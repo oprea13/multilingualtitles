@@ -10,17 +10,21 @@
 </fieldset>
 
 <fieldset>
-    <legend>{L_ACP_MULTILINGUAL_TITLES}</legend>
-    <p>{L_ACP_MULTILINGUAL_TITLES_EXPLAIN}</p>
+  <legend>{L_ACP_MULTILINGUAL_TITLES}</legend>
+  <p>{L_ACP_MULTILINGUAL_TITLES_EXPLAIN}</p>
 
-    <!-- BEGIN TRANSLATION_LANGS -->
+  <!-- BEGIN translation_langs -->
     <dl>
-        <dt><label for="forum_translation_{TRANSLATION_LANGS.ISO}_name">{L_FORUM_NAME} ({TRANSLATION_LANGS.LOCAL_NAME})</label></dt>
-        <dd><input type="text" id="forum_translation_{TRANSLATION_LANGS.ISO}_name" name="forum_translation[{TRANSLATION_LANGS.ISO}][forum_name]" value="{TRANSLATION_LANGS.TRANSLATION.forum_name}" maxlength="255" /></dd>
+      <dt>
+        <label>{translation_langs.LOCAL_NAME}</label><br />
+        <span>{translation_langs.NAME} ({translation_langs.ISO})</span>
+      </dt>
+      <dd>
+        <input type="text" name="forum_translation[{translation_langs.ISO}][forum_name]" value="{translation_langs.TRANSLATION.forum_name}" placeholder="{L_FORUM_NAME}" />
+      </dd>
+      <dd>
+        <textarea name="forum_translation[{translation_langs.ISO}][forum_desc]" rows="3" placeholder="{L_FORUM_DESC}">{translation_langs.TRANSLATION.forum_desc}</textarea>
+      </dd>
     </dl>
-    <dl>
-        <dt><label for="forum_translation_{TRANSLATION_LANGS.ISO}_desc">{L_FORUM_DESC} ({TRANSLATION_LANGS.LOCAL_NAME})</label></dt>
-        <dd><textarea id="forum_translation_{TRANSLATION_LANGS.ISO}_desc" name="forum_translation[{TRANSLATION_LANGS.ISO}][forum_desc]" rows="3" cols="50">{TRANSLATION_LANGS.TRANSLATION.forum_desc}</textarea></dd>
-    </dl>
-    <!-- END TRANSLATION_LANGS -->
+  <!-- END translation_langs -->
 </fieldset>
