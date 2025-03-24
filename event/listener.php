@@ -82,7 +82,7 @@ class listener implements EventSubscriberInterface
         $result = $this->db->sql_query($sql);
 
         $langs = [];
-        $default_iso = $this->user->data['user_lang'];
+        $default_iso = $this->lang->get_iso();
 
         while ($row = $this->db->sql_fetchrow($result)) {
             $iso = $row['lang_iso'];
@@ -134,7 +134,7 @@ class listener implements EventSubscriberInterface
     public function override_index_forum_names($event)
     {
         $forum_rows = $event['forum_rows'];
-        $lang_iso = $this->user->data['user_lang'];
+        $lang_iso = $this->lang->get_iso();
 
         foreach ($forum_rows as &$row) {
             $sql = 'SELECT forum_name, forum_desc FROM ' . $this->table_prefix . 'forum_translations
@@ -153,7 +153,7 @@ class listener implements EventSubscriberInterface
     public function override_viewforum_title($event)
     {
         $forum_data = $event['forum_data'];
-        $lang_iso = $this->user->data['user_lang'];
+        $lang_iso = $this->lang->get_iso();
 
         $sql = 'SELECT forum_name, forum_desc FROM ' . $this->table_prefix . 'forum_translations
                 WHERE forum_id = ' . (int)$forum_data['forum_id'] . " AND lang_iso = '" . $this->db->sql_escape($lang_iso) . "'";
