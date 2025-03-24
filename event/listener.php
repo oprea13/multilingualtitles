@@ -95,16 +95,14 @@ class listener implements EventSubscriberInterface
                     'forum_desc' => '',
                 ];
             }
-            $langs[] = [
+            $this->template->assign_block_vars('translation_langs', [
                 'ISO' => $iso,
                 'NAME' => $row['lang_english_name'],
                 'LOCAL_NAME' => $row['lang_local_name'],
                 'TRANSLATION' => $translations[$iso],
-            ];
+            ]);
         }
         $this->db->sql_freeresult($result);
-
-        $this->template->assign_var('TRANSLATION_LANGS', $langs);
     }
 
     public function validate_translation_fields($event)
