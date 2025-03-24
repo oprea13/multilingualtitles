@@ -1,0 +1,13 @@
+services:
+    iws.multilingualtitles.listener:
+        class: iws\multilingualtitles\event\listener
+        arguments:
+            - '@config'
+            - '@dbal.conn'
+            - '@language'
+            - '@user'
+            - '@request'
+            - '@template'
+            - '@controller.helper'
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,26 @@
+<!--
+  Multilingual Forum Titles and Descriptions - ACP Forum Language Fields
+  Inserts custom fields for forum_name and forum_desc per language (excluding default)
+  @author Oprea Cristian
+  @copyright (c) 2025 ITandWebSolutions
+  @license GNU General Public License, version 2 (GPL-2.0)
+  @link https://itandwebsolutions.ro
+-->
+
+</fieldset>
+
+<fieldset>
+    <legend>{L_ACP_MULTILINGUAL_TITLES}</legend>
+    <p>{L_ACP_MULTILINGUAL_TITLES_EXPLAIN}</p>
+
+    <!-- BEGIN TRANSLATION_LANGS -->
+    <dl>
+        <dt><label for="forum_translation_{TRANSLATION_LANGS.ISO}_name">{L_FORUM_NAME} ({TRANSLATION_LANGS.LOCAL_NAME})</label></dt>
+        <dd><input type="text" id="forum_translation_{TRANSLATION_LANGS.ISO}_name" name="forum_translation[{TRANSLATION_LANGS.ISO}][forum_name]" value="{TRANSLATION_LANGS.TRANSLATION.forum_name}" maxlength="255" /></dd>
+    </dl>
+    <dl>
+        <dt><label for="forum_translation_{TRANSLATION_LANGS.ISO}_desc">{L_FORUM_DESC} ({TRANSLATION_LANGS.LOCAL_NAME})</label></dt>
+        <dd><textarea id="forum_translation_{TRANSLATION_LANGS.ISO}_desc" name="forum_translation[{TRANSLATION_LANGS.ISO}][forum_desc]" rows="3" cols="50">{TRANSLATION_LANGS.TRANSLATION.forum_desc}</textarea></dd>
+    </dl>
+    <!-- END TRANSLATION_LANGS -->
+</fieldset>
