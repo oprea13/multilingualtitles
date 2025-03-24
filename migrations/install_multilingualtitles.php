@@ -2,7 +2,7 @@
 /**
  * Multilingual Forum Titles and Descriptions - Migration File
  * Creates table for multilingual forum name and description storage
- * 
+ *
  * @author Oprea Cristian
  * @copyright (c) 2025 ITandWebSolutions
  * @license GNU General Public License, version 2 (GPL-2.0)
@@ -11,7 +11,7 @@
 
 namespace iws\multilingualtitles\migrations;
 
-class multilingualtitles_1_0_0 extends \phpbb\db\migration\migration
+class install_multilingualtitles extends \phpbb\db\migration\migration
 {
     public function update_schema()
     {
